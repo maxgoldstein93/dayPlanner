@@ -6,6 +6,9 @@ To download this project the user can make a git clone from my github or use the
 
 To make the day planner the first thing I did was to make rows and columns for each part of the workday. I then used moment.js to display the current date in the header making use of jquery. From there I worked on storage and saved the inputs to local storage and recalled them. To change the colors I wrote a function to check if the current time is less than, equal to, or greater than the current time. Inside the conditional statements I added the classes to change colors based on the time of day.
 
+![Work Day Scheduler](https://user-images.githubusercontent.com/69087369/92977878-2bf70900-f45c-11ea-946c-d769b08c2c28.gif)
+
+
 
 
 
