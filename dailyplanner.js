@@ -4,24 +4,22 @@ var todaysDate = moment().format('dddd MMMM Do YYYY');
 console.log(todaysDate);
 date.text(todaysDate)
 
-// Saving Inputs to local storage
-// var inputTask =$("#nineAm").value;
-
-function displayTask(){
-    var displayTask =localStorage.getItem("nineAm");
-    var displayUserTask =document.querySelector("#nineAm");
-    displayUserTask.textContent = displayTask;
-}
-
 // Save user input
-$(".saveBtn").on("click", function (event) {
-    event.preventDefault();
+$(".saveBtn").on("click", function () {
+    console.log("Save");
     var inputTask = document.querySelector("#nineAm").value.trim();
     console.log(inputTask)
     localStorage.setItem("nineAm",JSON.stringify(inputTask));
-    console.log("Save")
+    
     
 });
+
+
+
+// var displayTask =localStorage.getItem("nineAm");
+// var displayTask =localStorage.getItem(inputTask);
+// var displayUserTask =document.querySelector("#nineAm");
+//     displayUserTask.textContent = displayTask;
 
 // //  Advanced Rows and Columns
 // var workHours = ["1","2","3","4","5","6","7","8"]
