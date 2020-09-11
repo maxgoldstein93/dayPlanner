@@ -9,11 +9,7 @@ $(".saveBtn").on("click", function (event) {
     event.preventDefault()
     console.log("Save");
     var inputTask = $(this).prev("textarea").val().trim();
-    console.log(inputTask)
     localStorage.setItem($(this).prev("textarea").attr("id"),(inputTask));
-    console.log()
-
-
 
 });
 
@@ -54,7 +50,7 @@ var displayTask = localStorage.getItem("17");
 var displayUserTask = document.getElementById("17");
 displayUserTask.value = displayTask;
 
-// Hour variable for document
+// Change row clolor
 
 function colorChange() {
     var currentTime = moment().format("HH");
