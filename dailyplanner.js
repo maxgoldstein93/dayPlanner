@@ -8,79 +8,101 @@ date.text(todaysDate)
 $(".saveBtn").on("click", function (event) {
     event.preventDefault()
     console.log("Save");
-    var inputTask = $(this).prev().find("input").val().trim();
+    var inputTask = $(this).prev().find("textarea").val().trim();
     console.log(inputTask)
-    localStorage.setItem($(this).prev().find("input").attr("id"),(inputTask));
+    localStorage.setItem($(this).prev().find("textarea").attr("id"), (inputTask));
 
 
-    
+
 });
 
-            // Get from Storage 
-    var displayTask =localStorage.getItem("nineAm");
-    var displayUserTask =document.querySelector("#nineAm");
-    displayUserTask.value = displayTask;
+// Get from Storage 
+var displayTask = localStorage.getItem("9");
+var displayUserTask = document.getElementById("9");
+displayUserTask.value = displayTask;
 
-    var displayTask =localStorage.getItem("tenAm");
-    var displayUserTask =document.querySelector("#tenAm");
-    displayUserTask.value = displayTask;
+var displayTask = localStorage.getItem("10");
+var displayUserTask = document.getElementById("10");
+displayUserTask.value = displayTask;
 
-    var displayTask =localStorage.getItem("elevenAm");
-    var displayUserTask =document.querySelector("#elevenAm");
-    displayUserTask.value = displayTask;
+var displayTask = localStorage.getItem("11");
+var displayUserTask = document.getElementById("11");
+displayUserTask.value = displayTask;
 
-    var displayTask =localStorage.getItem("twelvePm");
-    var displayUserTask =document.querySelector("#twelvePm");
-    displayUserTask.value = displayTask;
+var displayTask = localStorage.getItem("12");
+var displayUserTask = document.getElementById("12");
+displayUserTask.value = displayTask;
 
-    var displayTask =localStorage.getItem("onePm");
-    var displayUserTask =document.querySelector("#onePm");
-    displayUserTask.value = displayTask;
+var displayTask = localStorage.getItem("13");
+var displayUserTask = document.getElementById("13");
+displayUserTask.value = displayTask;
 
-    var displayTask =localStorage.getItem("twoPm");
-    var displayUserTask =document.querySelector("#twoPm");
-    displayUserTask.value = displayTask;
+var displayTask = localStorage.getItem("14");
+var displayUserTask = document.getElementById("14");
+displayUserTask.value = displayTask;
 
-    var displayTask =localStorage.getItem("threePm");
-    var displayUserTask =document.querySelector("#threePm");
-    displayUserTask.value = displayTask;
+var displayTask = localStorage.getItem("15");
+var displayUserTask = document.getElementById("15");
+displayUserTask.value = displayTask;
 
-    var displayTask =localStorage.getItem("fourPm");
-    var displayUserTask =document.querySelector("#fourPm");
-    displayUserTask.value = displayTask;
+var displayTask = localStorage.getItem("16");
+var displayUserTask = document.getElementById("16");
+displayUserTask.value = displayTask;
 
-    var displayTask =localStorage.getItem("fivePm");
-    var displayUserTask =document.querySelector("#fivePm");
-    displayUserTask.value = displayTask;
-    
-    
+var displayTask = localStorage.getItem("17");
+var displayUserTask = document.getElementById("17");
+displayUserTask.value = displayTask;
 
 
 
-    
+
+
+
 
 // //  Advanced Rows and Columns
 // var workHours = ["1","2","3","4","5","6","7","8"]
 // console.log(workHours)
 // for(var i = 0; i = workHours.length; i++){
 //     var newRow = $("<div>");
-    
+
 
 // };
+
+
 // Hour variable for document
-// var hour =moment().format("HH");
-// console.log(hour)
+
+var hour = moment().format("HH");
+console.log(hour)
 
 
-// Maybe need a loop??
-// function () color change
+function colorChange() {
+    var workHours = ["09", "10", "11", "12", "13", "14", "15", "16", "17"]
+    var currentTime = moment().format("HH");
+    // for (var i = 0; i = workHours.length; i++) {
+    //     if (workHours[i] > currentTime)
+    //     $()
+        
+    // }
 
-// if (currentTime > H){
-    // add to input class past
+    // }else if (workHours[i] = currentTime) {
+    // // add current class 
+    // } else {
+    // add class future
+    $(".form-control").each(function(){
+        var timeBlock = JSON.parse($(this).attr("id"))
+        console.log(timeBlock)
+        console.log(currentTime)
+        if(currentTime > timeBlock){
+            $(this).addClass("past")
+        }else if(currentTime == timeBlock){
+            $(this).addClass("present")
 
-// } else if( current time = H){
-//   add class present
-// }else{
-// add class future
-// }
+        }else{
+            $(this).addClass("future")
+        }
 
+
+    });
+
+    }
+    colorChange();
