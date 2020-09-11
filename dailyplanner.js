@@ -8,9 +8,10 @@ date.text(todaysDate)
 $(".saveBtn").on("click", function (event) {
     event.preventDefault()
     console.log("Save");
-    var inputTask = $(this).prev().find("textarea").val().trim();
+    var inputTask = $(this).prev("textarea").val().trim();
     console.log(inputTask)
-    localStorage.setItem($(this).prev().find("textarea").attr("id"), (inputTask));
+    localStorage.setItem($(this).prev("textarea").attr("id"),(inputTask));
+    console.log()
 
 
 
@@ -53,55 +54,19 @@ var displayTask = localStorage.getItem("17");
 var displayUserTask = document.getElementById("17");
 displayUserTask.value = displayTask;
 
-
-
-
-
-
-
-// //  Advanced Rows and Columns
-// var workHours = ["1","2","3","4","5","6","7","8"]
-// console.log(workHours)
-// for(var i = 0; i = workHours.length; i++){
-//     var newRow = $("<div>");
-
-
-// };
-
-
 // Hour variable for document
 
-var hour = moment().format("HH");
-console.log(hour)
-
-
 function colorChange() {
-    var workHours = ["09", "10", "11", "12", "13", "14", "15", "16", "17"]
     var currentTime = moment().format("HH");
-    // for (var i = 0; i = workHours.length; i++) {
-    //     if (workHours[i] > currentTime)
-    //     $()
-        
-    // }
-
-    // }else if (workHours[i] = currentTime) {
-    // // add current class 
-    // } else {
-    // add class future
     $(".form-control").each(function(){
         var timeBlock = JSON.parse($(this).attr("id"))
-        console.log(timeBlock)
-        console.log(currentTime)
         if(currentTime > timeBlock){
             $(this).addClass("past")
         }else if(currentTime == timeBlock){
             $(this).addClass("present")
-
         }else{
             $(this).addClass("future")
         }
-
-
     });
 
     }
